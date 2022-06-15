@@ -19,12 +19,17 @@ Output: 23
 class Solution {
     public int maxSubArray(int[] nums) {
         int n = nums.length;
+        
+        //created 2 variables to strore maximum sum value and sum value
         int max = Integer.MIN_VALUE, sum = 0;
         
+        
         for(int i=0;i<n;i++){
+        //adding array elements and comparing it with maximum sum
             sum += nums[i];
             max = Math.max(sum,max);
             
+            //if sum at instance in -ve then it is updated to 0
             if(sum<0) sum = 0;
         }
         return max;
